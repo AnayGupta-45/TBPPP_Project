@@ -31,6 +31,10 @@ app.get("/signin", (req, res) => {
   res.render("signin");
 });
 
+app.get('/about',(req,res)=>{
+  res.render('anay');
+})
+
 // Middlewares..
 app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
