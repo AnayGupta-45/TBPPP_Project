@@ -23,6 +23,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
+console.log("Hello World My name is Anay Gupta.")
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
