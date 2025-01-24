@@ -2,10 +2,10 @@ import express from "express";
 import dotenv from "dotenv";
 import passport from "passport";
 import session from "express-session";
-import {fileURLToPath} from "url";
+import { fileURLToPath } from "url";
 import path from "path";
 import dbConnect from "./configs/db.js";
-import { router as authRoutes } from './routes/authRoutes.js';
+import authRoutes from './routes/authRoutes.js';
 import usersRoutes from './routes/users.js';
 import flash from "connect-flash";
 
@@ -68,7 +68,6 @@ app.use(express.json({ limit: "100mb" }));
 app.use(express.urlencoded({ limit: "100mb", extended: true }));
 
 // Routes POST Request..
-
 app.post("/signup", (req, res, next) => {
   passport.authenticate('local', {
     successRedirect: '/dashboard',
@@ -96,7 +95,6 @@ app.post("/logout", (req, res) => {
   req.flash("success_msg", "You are logged out");
   res.redirect("/signin");
 });
-
 
 // Listen The PORT..
 const PORT = process.env.PORT || 7002;
