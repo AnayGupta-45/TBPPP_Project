@@ -53,13 +53,15 @@ router.post('/signup', async (req, res) => {
 });
 
 // Login
+// Signin Route
 router.post('/signin', (req, res, next) => {
-  passport.authenticate('local', {
-    successRedirect: '/dashboard',
-    failureRedirect: '/signin',
-    failureFlash: true
-  })(req, res, next);
-});
+    passport.authenticate('local', {
+      successRedirect: '/dashboard', // Redirect on successful login
+      failureRedirect: '/signin',   // Redirect on failed login
+      failureFlash: true,            // Flash the failure message
+    })(req, res, next);
+  });
+      
 
 // Logout
 router.get('/logout', (req, res) => {

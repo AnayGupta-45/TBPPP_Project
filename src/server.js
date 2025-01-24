@@ -58,7 +58,6 @@ app.use(function(req, res, next) {
   res.locals.error = req.flash('error');
   next();
 });
-
 // Routes
 app.use('/', authRoutes);
 app.use('/users', usersRoutes);
